@@ -1,5 +1,4 @@
 {
-  "_name_or_path": "/mnt/sfs-common/pyzhang/Peiyuan/alignment-handbook/data/zephyr-7b-sft-full",
   "architectures": [
     "LlamaForCausalLM"
   ],
