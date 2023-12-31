@@ -1,96 +1,58 @@
 ---
-tags:
-- generated_from_trainer
-model-index:
-- name: TinyLlama-1.1B-Chat-v1.0
-  results: []
+license: apache-2.0
+datasets:
+- cerebras/SlimPajama-627B
+- bigcode/starcoderdata
+- OpenAssistant/oasst_top1_2023-08-25
+language:
+- en
 ---
+<div align="center">
 
-<!-- This model card has been generated automatically according to the information the Trainer had access to. You
-should probably proofread and complete it, then remove this comment. -->
+# TinyLlama-1.1B
+</div>
 
-# TinyLlama-1.1B-Chat-v1.0
+https://github.com/jzhang38/TinyLlama
 
-This model was trained from scratch on the None dataset.
-It achieves the following results on the evaluation set:
-- Loss: 0.5138
-- Rewards/chosen: -0.0274
-- Rewards/rejected: -1.0362
-- Rewards/accuracies: 0.7381
-- Rewards/margins: 1.0087
-- Logps/rejected: -296.0739
-- Logps/chosen: -370.1298
-- Logits/rejected: -2.6565
-- Logits/chosen: -2.7074
-
-## Model description
-
-More information needed
-
-## Intended uses & limitations
-
-More information needed
-
-## Training and evaluation data
-
-More information needed
-
-## Training procedure
-
-### Training hyperparameters
-
-The following hyperparameters were used during training:
-- learning_rate: 5e-07
-- train_batch_size: 8
-- eval_batch_size: 4
-- seed: 42
-- distributed_type: multi-GPU
-- num_devices: 8
-- total_train_batch_size: 64
-- total_eval_batch_size: 32
-- optimizer: Adam with betas=(0.9,0.999) and epsilon=1e-08
-- lr_scheduler_type: linear
-- lr_scheduler_warmup_ratio: 0.1
-- num_epochs: 3
-
-### Training results
-
-| Training Loss | Epoch | Step | Validation Loss | Rewards/chosen | Rewards/rejected | Rewards/accuracies | Rewards/margins | Logps/rejected | Logps/chosen | Logits/rejected | Logits/chosen |
-|:-------------:|:-----:|:----:|:---------------:|:--------------:|:----------------:|:------------------:|:---------------:|:--------------:|:------------:|:---------------:|:-------------:|
-| 0.6686        | 0.1   | 100  | 0.6668          | 0.0624         | -0.0106          | 0.6746             | 0.0730          | -285.8178      | -369.2313    | -2.7623         | -2.8330       |
-| 0.59          | 0.21  | 200  | 0.5995          | 0.1603         | -0.1926          | 0.6825             | 0.3530          | -287.6386      | -368.2522    | -2.7514         | -2.8180       |
-| 0.5843        | 0.31  | 300  | 0.5644          | 0.2269         | -0.3175          | 0.6905             | 0.5444          | -288.8868      | -367.5864    | -2.7305         | -2.7952       |
-| 0.5633        | 0.41  | 400  | 0.5476          | 0.2211         | -0.4312          | 0.7103             | 0.6523          | -290.0246      | -367.6447    | -2.7100         | -2.7725       |
-| 0.5224        | 0.52  | 500  | 0.5388          | 0.2702         | -0.4543          | 0.6984             | 0.7244          | -290.2547      | -367.1539    | -2.6919         | -2.7543       |
-| 0.5689        | 0.62  | 600  | 0.5326          | 0.3161         | -0.4312          | 0.7302             | 0.7473          | -290.0246      | -366.6946    | -2.6977         | -2.7596       |
-| 0.5556        | 0.72  | 700  | 0.5296          | 0.3133         | -0.4431          | 0.7143             | 0.7565          | -290.1436      | -366.7222    | -2.6960         | -2.7563       |
-| 0.5368        | 0.83  | 800  | 0.5235          | 0.3087         | -0.5008          | 0.7183             | 0.8096          | -290.7203      | -366.7679    | -2.6863         | -2.7455       |
-| 0.5324        | 0.93  | 900  | 0.5231          | 0.3330         | -0.4764          | 0.7381             | 0.8094          | -290.4763      | -366.5252    | -2.6944         | -2.7532       |
-| 0.4667        | 1.03  | 1000 | 0.5211          | 0.3442         | -0.4815          | 0.7302             | 0.8257          | -290.5269      | -366.4131    | -2.6890         | -2.7466       |
-| 0.4516        | 1.14  | 1100 | 0.5197          | 0.2843         | -0.6031          | 0.7381             | 0.8874          | -291.7431      | -367.0122    | -2.6770         | -2.7325       |
-| 0.4176        | 1.24  | 1200 | 0.5184          | 0.2116         | -0.7161          | 0.7460             | 0.9276          | -292.8727      | -367.7397    | -2.6729         | -2.7277       |
-| 0.446         | 1.34  | 1300 | 0.5187          | 0.2095         | -0.6963          | 0.7421             | 0.9058          | -292.6750      | -367.7603    | -2.6740         | -2.7278       |
-| 0.472         | 1.44  | 1400 | 0.5154          | 0.2233         | -0.6454          | 0.7540             | 0.8686          | -292.1659      | -367.6227    | -2.6716         | -2.7264       |
-| 0.4425        | 1.55  | 1500 | 0.5158          | 0.1986         | -0.7079          | 0.7381             | 0.9065          | -292.7915      | -367.8694    | -2.6695         | -2.7244       |
-| 0.434         | 1.65  | 1600 | 0.5148          | 0.2037         | -0.6841          | 0.7381             | 0.8878          | -292.5535      | -367.8188    | -2.6639         | -2.7187       |
-| 0.4209        | 1.75  | 1700 | 0.5146          | 0.1297         | -0.7819          | 0.7460             | 0.9116          | -293.5308      | -368.5582    | -2.6636         | -2.7185       |
-| 0.4128        | 1.86  | 1800 | 0.5129          | 0.1418         | -0.7822          | 0.7381             | 0.9240          | -293.5338      | -368.4372    | -2.6651         | -2.7194       |
-| 0.4685        | 1.96  | 1900 | 0.5125          | 0.0967         | -0.8256          | 0.7421             | 0.9223          | -293.9677      | -368.8879    | -2.6709         | -2.7248       |
-| 0.3605        | 2.06  | 2000 | 0.5130          | 0.0627         | -0.8947          | 0.7302             | 0.9574          | -294.6591      | -369.2281    | -2.6689         | -2.7211       |
-| 0.3463        | 2.17  | 2100 | 0.5123          | 0.0453         | -0.9465          | 0.7421             | 0.9918          | -295.1770      | -369.4025    | -2.6709         | -2.7218       |
-| 0.362         | 2.27  | 2200 | 0.5125          | 0.0174         | -0.9774          | 0.7381             | 0.9948          | -295.4861      | -369.6811    | -2.6628         | -2.7140       |
-| 0.354         | 2.37  | 2300 | 0.5148          | 0.0053         | -0.9919          | 0.7421             | 0.9972          | -295.6311      | -369.8024    | -2.6562         | -2.7070       |
-| 0.3539        | 2.48  | 2400 | 0.5144          | -0.0049        | -0.9987          | 0.7381             | 0.9939          | -295.6994      | -369.9039    | -2.6557         | -2.7070       |
-| 0.3374        | 2.58  | 2500 | 0.5143          | -0.0015        | -1.0170          | 0.75               | 1.0156          | -295.8826      | -369.8703    | -2.6616         | -2.7128       |
-| 0.3417        | 2.68  | 2600 | 0.5137          | 0.0000         | -1.0041          | 0.7341             | 1.0041          | -295.7533      | -369.8551    | -2.6605         | -2.7118       |
-| 0.3312        | 2.79  | 2700 | 0.5140          | -0.0197        | -1.0285          | 0.7302             | 1.0089          | -295.9977      | -370.0519    | -2.6563         | -2.7071       |
-| 0.3643        | 2.89  | 2800 | 0.5146          | -0.0233        | -1.0285          | 0.7421             | 1.0052          | -295.9974      | -370.0886    | -2.6552         | -2.7063       |
-| 0.3322        | 2.99  | 2900 | 0.5142          | -0.0293        | -1.0337          | 0.7302             | 1.0045          | -296.0496      | -370.1480    | -2.6573         | -2.7079       |
+The TinyLlama project aims to **pretrain** a **1.1B Llama model on 3 trillion tokens**. With some proper optimization, we can achieve this within a span of "just" 90 days using 16 A100-40G GPUs 🚀🚀. The training has started on 2023-09-01. 
 
 
-### Framework versions
+We adopted exactly the same architecture and tokenizer as Llama 2. This means TinyLlama can be plugged and played in many open-source projects built upon Llama. Besides, TinyLlama is compact with only 1.1B parameters. This compactness allows it to cater to a multitude of applications demanding a restricted computation and memory footprint.
 
-- Transformers 4.35.0
-- Pytorch 2.1.2+cu121
-- Datasets 2.14.6
-- Tokenizers 0.14.1
+#### This Model
+This is the chat model finetuned on top of [TinyLlama/TinyLlama-1.1B-intermediate-step-955k-3T](https://huggingface.co/TinyLlama/TinyLlama-1.1B-intermediate-step-1431k-3T). **We follow [HF's Zephyr](https://huggingface.co/HuggingFaceH4/zephyr-7b-alpha/edit/main/README.md)'s training recipe.** The model was " initially fine-tuned on a variant of the [`UltraChat`](https://huggingface.co/datasets/stingning/ultrachat) dataset, which contains a diverse range of synthetic dialogues generated by ChatGPT. 
+We then further aligned the model with [🤗 TRL's](https://github.com/huggingface/trl) `DPOTrainer` on the [openbmb/UltraFeedback](https://huggingface.co/datasets/openbmb/UltraFeedback) dataset, which contain 64k prompts and model completions that are ranked by GPT-4." 
+
+
+#### How to use
+You will need the transformers>=4.34
+Do check the [TinyLlama](https://github.com/jzhang38/TinyLlama) github page for more information.
+
+```python
+# Install transformers from source - only needed for versions <= v4.34
+# pip install git+https://github.com/huggingface/transformers.git
+# pip install accelerate
+
+import torch
+from transformers import pipeline
+
+pipe = pipeline("text-generation", model="TinyLlama/TinyLlama-1.1B-Chat-v1.0", torch_dtype=torch.bfloat16, device_map="auto")
+
+# We use the tokenizer's chat template to format each message - see https://huggingface.co/docs/transformers/main/en/chat_templating
+messages = [
+    {
+        "role": "system",
+        "content": "You are a friendly chatbot who always responds in the style of a pirate",
+    },
+    {"role": "user", "content": "How many helicopters can a human eat in one sitting?"},
+]
+prompt = pipe.tokenizer.apply_chat_template(messages, tokenize=False, add_generation_prompt=True)
+outputs = pipe(prompt, max_new_tokens=256, do_sample=True, temperature=0.7, top_k=50, top_p=0.95)
+print(outputs[0]["generated_text"])
+# <|system|>
+# You are a friendly chatbot who always responds in the style of a pirate.</s>
+# <|user|>
+# How many helicopters can a human eat in one sitting?</s>
+# <|assistant|>
+# ...
+```
