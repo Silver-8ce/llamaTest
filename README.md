@@ -7,6 +7,8 @@ datasets:
 - HuggingFaceH4/ultrafeedback_binarized
 language:
 - en
+widget:
+- text: "<|system|>\nYou are a chatbot who can help code!</s>\n<|user|>\nWrite me a function to calculate the first 10 digits of the fibonacci sequence in Python and print it out to the CLI.</s>\n<|assistant|>\n"
 ---
 <div align="center">
 
