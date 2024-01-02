@@ -3,7 +3,8 @@ license: apache-2.0
 datasets:
 - cerebras/SlimPajama-627B
 - bigcode/starcoderdata
-- OpenAssistant/oasst_top1_2023-08-25
+- HuggingFaceH4/ultrachat_200k
+- HuggingFaceH4/ultrafeedback_binarized
 language:
 - en
 ---
